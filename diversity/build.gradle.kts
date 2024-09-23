@@ -2,6 +2,7 @@ plugins {
     java
     jacoco
     application
+    `java-library`
 }
 
 java.toolchain {
@@ -26,6 +27,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+
+    api(project(":lib"))
+    api(project(":logic"))
 }
 
 tasks {
